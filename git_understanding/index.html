@@ -637,6 +637,50 @@
     color: var(--text);
   }
 
+  /* ── ALUMNI ── */
+  .alumni-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .alumni-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: transform 0.3s, box-shadow 0.3s; }
+  .alumni-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); box-shadow: 0 12px 30px rgba(0,0,0,0.5); }
+  .alumni-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; }
+  .avatar.core { background: rgba(0,212,170,0.15); color: var(--core-start); border: 1px solid rgba(0,212,170,0.3); }
+  .avatar.pro { background: rgba(255,107,53,0.15); color: var(--pro-start); border: 1px solid rgba(255,107,53,0.3); }
+  .avatar.gold { background: rgba(255,215,0,0.15); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); }
+  .alumni-role { font-size: 0.8rem; color: var(--muted); }
+  .alumni-quote { font-size: 0.95rem; font-style: italic; color: #ced4df; margin-bottom: 1.5rem; line-height: 1.5; }
+  .alumni-track { display: inline-block; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; padding: 0.3rem 0.6rem; border-radius: 6px; background: var(--surface2); color: var(--muted); }
+
+  /* ── PRICING ── */
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 800px; margin: 0 auto; }
+  .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 3rem 2rem; position: relative; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s; }
+  .pricing-card:hover { transform: translateY(-4px); }
+  .pricing-card.pro-pricing { border-color: rgba(255,107,53,0.3); background: linear-gradient(180deg, rgba(255,107,53,0.03) 0%, transparent 100%); }
+  .pricing-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; align-self: flex-start; }
+  .core-pricing .pricing-badge { background: rgba(0,212,170,0.15); color: var(--core-start); }
+  .pro-pricing .pricing-badge { background: rgba(255,107,53,0.15); color: var(--pro-start); }
+  .pricing-card h3 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin-bottom: 0.5rem; text-align: left; }
+  .price { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; text-align: left; margin-bottom: 1.5rem; }
+  .core-pricing .price { color: var(--text); }
+  .pro-pricing .price { background: linear-gradient(135deg, var(--pro-start), var(--pro-end)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .pricing-features { list-style: none; margin-bottom: 2.5rem; text-align: left; flex-grow: 1; }
+  .pricing-features li { margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; }
+  .cta-button { padding: 1rem 2rem; border-radius: 100px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; width: 100%; }
+  .core-btn { background: rgba(0,212,170,0.1); color: var(--core-start); border: 1px solid var(--core-start); }
+  .core-btn:hover { background: rgba(0,212,170,0.2); transform: translateY(-2px); }
+  .pro-btn { background: linear-gradient(135deg, var(--pro-start), var(--pro-end)); color: white; box-shadow: 0 4px 15px rgba(255,107,53,0.3); }
+  .pro-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,53,0.5); }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+  .faq-item { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow: hidden; transition: border-color 0.3s; }
+  .faq-item:hover { border-color: rgba(255,255,255,0.1); }
+  .faq-question { width: 100%; text-align: left; padding: 1.5rem; background: transparent; border: none; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-icon { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; color: var(--accent); transition: transform 0.3s; }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 1.5rem; }
+  .faq-answer p { color: var(--muted); padding-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; }
+  .faq-item.active .faq-answer { max-height: 200px; }
+  .faq-item.active .faq-icon { transform: rotate(45deg); color: var(--pro-start); }
+
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
@@ -737,8 +781,9 @@
   .progress-wrap svg.progress-circle path { stroke: var(--accent); stroke-width: 4; box-sizing: border-box; transition: all 200ms linear; }
   
   /* ── CUSTOM CURSOR ── */
-  @media (pointer: fine) { *, a, button, .pill, .track-card, .phase-card { cursor: none !important; } }
-  .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 99999; pointer-events: none; }
+  @media (pointer: fine) { body.heavy-effects *, body.heavy-effects a, body.heavy-effects button, body.heavy-effects .pill, body.heavy-effects .track-card, body.heavy-effects .phase-card { cursor: none !important; } }
+  .cursor-dot, .cursor-outline { position: fixed; top: 0; left: 0; transform: translate(-50%, -50%); border-radius: 50%; z-index: 99999; pointer-events: none; display: none; }
+  body.heavy-effects .cursor-dot, body.heavy-effects .cursor-outline { display: block; }
   .cursor-dot { width: 8px; height: 8px; background-color: var(--accent); }
   .cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(0, 212, 170, 0.5); transition: width 0.2s, height 0.2s, border 0.2s; }
   .cursor-hover .cursor-outline { width: 60px; height: 60px; border-color: rgba(255, 107, 53, 0.8); background-color: rgba(255, 107, 53, 0.1); }
@@ -777,11 +822,13 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">CODE<span>X</span></div>
-  <ul class="nav-links">
+  <ul class="nav-links" style="gap:1.5rem;">
     <li><a href="#overview">Overview</a></li>
     <li><a href="#curriculum">Curriculum</a></li>
-    <li><a href="#weekly">Weekly Plan</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#alumni">Alumni</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#enroll" style="color:var(--text);font-weight:700;border:1px solid rgba(255,255,255,0.2);padding:0.4rem 0.8rem;border-radius:100px;">Enroll Now</a></li>
   </ul>
 </nav>
 
@@ -1245,6 +1292,114 @@
   </div>
 </div>
 
+<!-- ALUMNI SECTION -->
+<div id="alumni" style="position:relative;z-index:1;background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="section">
+    <p class="section-label">// Hall of Fame</p>
+    <h2 class="section-title">Where Our<br/>Graduates Land.</h2>
+    <p class="section-desc">From FAANG to fast-growing startups, our alumni are building the future.</p>
+    
+    <div class="alumni-grid reveal">
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <div class="avatar core">JD</div>
+          <div>
+            <h4 style="font-family:'Syne',sans-serif;font-weight:700;">John Doe</h4>
+            <p class="alumni-role">SDE-1 @ Meta</p>
+          </div>
+        </div>
+        <p class="alumni-quote">"The system design mocks were identical to my actual Meta interview. CS Pro is the real deal."</p>
+        <span class="alumni-track">🎓 CS Pro Graduate</span>
+      </div>
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <div class="avatar pro">AR</div>
+          <div>
+            <h4 style="font-family:'Syne',sans-serif;font-weight:700;">Alex Rivera</h4>
+            <p class="alumni-role">Frontend Engineer @ Stripe</p>
+          </div>
+        </div>
+        <p class="alumni-quote">"I transitioned from a non-tech background. The MERN stack modules in CS Core gave me everything I needed."</p>
+        <span class="alumni-track">🎓 CS Core Graduate</span>
+      </div>
+      <div class="alumni-card">
+        <div class="alumni-header">
+          <div class="avatar gold">SK</div>
+          <div>
+            <h4 style="font-family:'Syne',sans-serif;font-weight:700;">Sarah Kim</h4>
+            <p class="alumni-role">Backend Engineer @ Google</p>
+          </div>
+        </div>
+        <p class="alumni-quote">"The advanced DSA and DP patterns completely changed how I approach problem solving. Worth every week."</p>
+        <span class="alumni-track">🎓 CS Pro Graduate</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ENROLL CTA SECTION -->
+<div id="enroll" style="position:relative;z-index:1;">
+  <div class="section" style="text-align:center;">
+    <p class="section-label">// Ready to Start?</p>
+    <h2 class="section-title">Secure Your Spot.</h2>
+    <p class="section-desc" style="margin: 0 auto 3rem auto;">Next cohort begins soon. Choose your track and level up.</p>
+    
+    <div class="pricing-grid reveal">
+      <div class="pricing-card core-pricing">
+        <div class="pricing-badge">📘 CS Core</div>
+        <h3>Foundation</h3>
+        <div class="price">$1,499</div>
+        <ul class="pricing-features">
+          <li>✔ 22 Weeks of Content</li>
+          <li>✔ MERN Stack Mastery</li>
+          <li>✔ 150+ DSA Problems</li>
+          <li>✔ 1-on-1 Mentorship</li>
+        </ul>
+        <button class="cta-button core-btn">Apply for Core</button>
+      </div>
+      <div class="pricing-card pro-pricing">
+        <div class="pricing-badge">🔥 CS Pro</div>
+        <h3>FAANG Ready</h3>
+        <div class="price">$2,999</div>
+        <ul class="pricing-features">
+          <li>✔ Everything in Core</li>
+          <li>✔ +22 Weeks Advanced Playbook</li>
+          <li>✔ System Design &amp; AI modules</li>
+          <li>✔ Unlimited Mock Interviews</li>
+        </ul>
+        <button class="cta-button pro-btn">Apply for Pro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ SECTION -->
+<div id="faq" style="position:relative;z-index:1;border-top:1px solid var(--border);">
+  <div class="section">
+    <p class="section-label">// Got Questions?</p>
+    <h2 class="section-title" style="text-align:center;margin-bottom:3rem;">F.A.Q.</h2>
+    
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">Do I need prior coding experience? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>No, the CS Core starts from zero with Programming Foundations. However, absolute beginners will need to commit more hours per week to keep up with the pace.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I upgrade to CS Pro later? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes! Many students enroll in CS Core first and decide to roll into CS Pro seamlessly around Week 18.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is the weekly time commitment? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We recommend 15-20 hours per week. This covers lectures, coding exercises, and project building.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Are the mock interviews live? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes. CS Pro includes 1-on-1 live mock interviews with actual engineers from top-tier tech companies to simulate real hiring loops.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <p style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:0.5rem;">CODEX <span style="color:var(--core-start);">Engineering Program</span></p>
@@ -1253,21 +1408,39 @@
 </footer>
 
 <script>
+  // Device capability checks for conditional effects
+  const checkHighPerformance = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const logicalCores = navigator.hardwareConcurrency || 4;
+    return !prefersReducedMotion && !isTouch && logicalCores > 4;
+  };
+
+  const useHeavyEffects = checkHighPerformance();
+
+  if (useHeavyEffects) {
+    document.body.classList.add('heavy-effects');
+  }
+
   // Preloader Logic
   const hidePreloader = () => {
     const p = document.querySelector('.preloader');
     if (p) p.classList.add('preloader-hidden');
   };
-  if (document.readyState === 'complete') hidePreloader();
-  else window.addEventListener('load', () => setTimeout(hidePreloader, 800));
-  // Failsafe: always hide after 2.5s maximum
-  setTimeout(hidePreloader, 2500);
+  
+  if (!useHeavyEffects) {
+    // Disable preloader altogether for performance/smoothness
+    hidePreloader();
+  } else {
+    if (document.readyState === 'complete') hidePreloader();
+    else window.addEventListener('load', () => setTimeout(hidePreloader, 800));
+    setTimeout(hidePreloader, 2500);
+  }
 
   // Custom Cursor Logic
-  const cursorDot = document.querySelector('.cursor-dot');
-  const cursorOutline = document.querySelector('.cursor-outline');
-  
-  if (window.innerWidth > 768) {
+  if (useHeavyEffects && window.innerWidth > 768) {
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
     window.addEventListener('mousemove', (e) => {
       const posX = e.clientX;
       const posY = e.clientY;
@@ -1289,38 +1462,63 @@
   }
 
   // Scroll Progress Logic
-  const progressPath = document.querySelector('.progress-wrap path');
-  const pathLength = progressPath.getTotalLength();
-  progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
-  progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
-  progressPath.style.strokeDashoffset = pathLength;
-  progressPath.getBoundingClientRect();
-  progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-  const updateProgress = function () {
-    const scroll = window.scrollY || window.pageYOffset;
-    const height = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = pathLength - (scroll * pathLength / height);
-    progressPath.style.strokeDashoffset = progress;
+  if (useHeavyEffects) {
+    const progressPath = document.querySelector('.progress-wrap path');
+    if (progressPath) {
+      const pathLength = progressPath.getTotalLength();
+      progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+      progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+      progressPath.style.strokeDashoffset = pathLength;
+      progressPath.getBoundingClientRect();
+      progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+      const updateProgress = function () {
+        const scroll = window.scrollY || window.pageYOffset;
+        const height = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = pathLength - (scroll * pathLength / height);
+        progressPath.style.strokeDashoffset = progress;
+      }
+      updateProgress();
+      window.addEventListener('scroll', updateProgress);
+    }
   }
-  updateProgress();
-  window.addEventListener('scroll', updateProgress);
+
+  // General Top Scroll Button Logic (keep functionality even if no heavy effects, just less animation)
   const offset = 50;
   window.addEventListener('scroll', function() {
-    if (window.scrollY > offset) {
-      document.querySelector('.progress-wrap').classList.add('active-progress');
-    } else {
-      document.querySelector('.progress-wrap').classList.remove('active-progress');
+    const progressWrap = document.querySelector('.progress-wrap');
+    if(progressWrap) {
+      if (window.scrollY > offset) {
+        progressWrap.classList.add('active-progress');
+      } else {
+        progressWrap.classList.remove('active-progress');
+      }
     }
   });
-  document.querySelector('.progress-wrap').addEventListener('click', function(event) {
-    event.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    return false;
+  const progressWrapBtn = document.querySelector('.progress-wrap');
+  if(progressWrapBtn) {
+    progressWrapBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return false;
+    });
+  }
+
+  // FAQ Accordion Logic
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    btn.addEventListener('click', () => {
+      // close others
+      faqItems.forEach(other => {
+        if (other !== item) other.classList.remove('active');
+      });
+      item.classList.toggle('active');
+    });
   });
 
   // VanillaTilt Initialization
-  if (typeof VanillaTilt !== 'undefined') {
-    VanillaTilt.init(document.querySelectorAll(".track-card, .skill-card, .phase-card"), {
+  if (useHeavyEffects && typeof VanillaTilt !== 'undefined') {
+    VanillaTilt.init(document.querySelectorAll(".track-card, .skill-card, .phase-card, .alumni-card, .pricing-card"), {
       max: 2,
       speed: 400,
       glare: true,
@@ -1329,70 +1527,95 @@
   }
 
   // GSAP + ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
+  if (typeof gsap !== 'undefined') {
+    if (useHeavyEffects) {
+      gsap.registerPlugin(ScrollTrigger);
 
-  // Hero Animations
-  const heroTl = gsap.timeline({delay: 0.5});
-  heroTl.from(".hero .eyebrow", {y: 30, opacity: 0, duration: 0.6, ease: "power3.out"})
-        .from(".hero h1", {y: 40, opacity: 0, duration: 0.8, ease: "power3.out"}, "-=0.4")
-        .from(".hero-sub", {y: 20, opacity: 0, duration: 0.6, ease: "power3.out"}, "-=0.4")
-        .from(".track-pills .pill", {y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: "power3.out"}, "-=0.4");
+      // Hero Animations
+      const heroTl = gsap.timeline({delay: 0.5});
+      heroTl.from(".hero .eyebrow", {y: 30, opacity: 0, duration: 0.6, ease: "power3.out"})
+            .from(".hero h1", {y: 40, opacity: 0, duration: 0.8, ease: "power3.out"}, "-=0.4")
+            .from(".hero-sub", {y: 20, opacity: 0, duration: 0.6, ease: "power3.out"}, "-=0.4")
+            .from(".track-pills .pill", {y: 20, opacity: 0, duration: 0.6, stagger: 0.1, ease: "power3.out"}, "-=0.4");
 
-  // General Reveal elements
-  gsap.utils.toArray('.reveal').forEach(el => {
-    gsap.fromTo(el, 
-      { y: 40, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  });
-
-  // Phase Blocks Reveal
-  gsap.utils.toArray('.phase-block').forEach(block => {
-    gsap.fromTo(block,
-      { x: -40, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: block,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  });
-
-  // Roadmap Line Fill
-  gsap.utils.toArray('.rm-step').forEach(step => {
-    const line = step.querySelector('.rm-line');
-    if(line) {
-      gsap.fromTo(line, 
-        { scaleY: 0, transformOrigin: 'top' },
-        {
-          scaleY: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: step,
-            start: "top center",
-            end: "bottom center",
-            scrub: true
+      // General Reveal elements
+      gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.fromTo(el, 
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
           }
+        );
+      });
+
+      // Phase Blocks Reveal
+      gsap.utils.toArray('.phase-block').forEach(block => {
+        gsap.fromTo(block,
+          { x: -40, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: block,
+              start: "top 85%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      // Roadmap Line Fill
+      gsap.utils.toArray('.rm-step').forEach(step => {
+        const line = step.querySelector('.rm-line');
+        if(line) {
+          gsap.fromTo(line, 
+            { scaleY: 0, transformOrigin: 'top' },
+            {
+              scaleY: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: step,
+                start: "top center",
+                end: "bottom center",
+                scrub: true
+              }
+            }
+          );
         }
-      );
+      });
+    } else {
+      // If not using heavy effects, set opacity and transforms immediately to visible without animation
+      document.querySelectorAll('.eyebrow, .hero h1, .hero-sub, .track-pills .pill').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translate(0,0)';
+        el.style.animation = 'none'; // disable CSS animation from .eyebrow, etc.
+      });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translate(0,0)';
+      });
+
+      document.querySelectorAll('.phase-block').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translate(0,0)';
+      });
+
+      document.querySelectorAll('.rm-line').forEach(el => {
+        el.style.transform = 'scaleY(1)';
+      });
     }
-  });
+  }
 
 </script>
 </body>
