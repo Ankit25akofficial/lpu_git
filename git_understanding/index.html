@@ -811,6 +811,18 @@
     }
   }
 
+  /* ── SCROLL PROGRESS BAR ── */
+  #scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(135deg, var(--core-start), var(--pro-start));
+    z-index: 10000;
+    transition: width 0.1s ease-out;
+  }
+
   /* ── STAT STRIP ── */
   .stat-strip {
     display: grid;
@@ -923,6 +935,7 @@
 </style>
 </head>
 <body>
+<div id="scroll-progress-bar"></div>
 
 <!-- NAV -->
 <nav>
@@ -1551,6 +1564,15 @@
         item.classList.add('active');
       }
     });
+  });
+
+  // Scroll Progress Bar
+  const progressBar = document.getElementById('scroll-progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrollTotal = document.documentElement.scrollTop || document.body.scrollTop;
+    const heightTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPosition = (scrollTotal / heightTotal) * 100;
+    progressBar.style.width = scrollPosition + '%';
   });
 
   // Back to Top
